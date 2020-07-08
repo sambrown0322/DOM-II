@@ -36,11 +36,29 @@ body.addEventListener("wheel", textColorChange)
 body.addEventListener("copy", () => {
     alert("Don't steal my shit!");
 })
-let links = document.querySelectorAll(".btn")
-links.forEach(item => item.addEventListener("mousedown", (event) => {
+let buttons = document.querySelectorAll(".btn")
+buttons.forEach(item => item.addEventListener("mousedown", (event) => {
     event.target.style.backgroundColor = "black"
+    event.target.style.color = "white"
 }))
-links.forEach(item => item.addEventListener("mouseup", (event) => {
+buttons.forEach(item => item.addEventListener("mouseup", (event) => {
     event.target.style.backgroundColor = "#17A2B8"
     event.target.style.color = "white"
 }))
+buttons.forEach(item => item.addEventListener("mouseover", (event) => {
+    event.target.style.color = "#17A2B8"
+    event.target.style.backgroundColor = "white"
+}))
+buttons.forEach(item => item.addEventListener("mouseout", (event) => {
+    event.target.style.backgroundColor = "#17A2B8"
+    event.target.style.color = "white"
+}))
+let links = document.querySelectorAll("nav a")
+links.forEach(item => item.addEventListener("click", (event)=> {
+    event.preventDefault()
+    console.log("hello")
+}))
+body.addEventListener("contextmenu", (event) => {
+     event.target.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    if (color.length < 7) color += "0";
+})
